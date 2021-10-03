@@ -1,0 +1,32 @@
+package com.hcl;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Appointment extends HttpServlet  {
+
+	
+	
+	public void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		PrintWriter pw=res.getWriter();
+		res.setContentType("text/html");
+
+		String n1 = req.getParameter("first_name");
+		String n2 = req.getParameter("last_name");
+		int n3 = req.getParameter("DOB");
+		int n4 = req.getParameter("mnumber");
+		String n5 = req.getParameter("address");
+		
+       AppointmentBean appoint = new AppointmentBean();
+
+       appoint.setAddress(n5);
+       appoint.setDob(n3);
+       appoint.setFname(n1);
+       appoint.setLname(n2);
+       appoint.setMnumber(n4);
+       
+       
+	}
+}
